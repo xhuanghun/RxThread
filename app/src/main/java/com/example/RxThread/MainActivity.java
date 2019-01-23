@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        testCreate();
 
-        testInterval();
+//        testInterval();
 
 
 //        testTimer();
@@ -152,6 +152,9 @@ public class MainActivity extends AppCompatActivity {
 //                postDelay();
 //            }
 //        }.start();
+
+
+        postDelay();
 
     }
 
@@ -213,12 +216,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void postDelay() {
+        Log.e("wyn", "postDelay thread is " + Thread.currentThread().getName());
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Log.e("wyn", "postDelayed");
 
                 Log.e("wyn", "postDelayed thread is " + Thread.currentThread().getName());
+
+                tvContent.setText("好吧，我就是测试下");
             }
         }, 3000);
     }
